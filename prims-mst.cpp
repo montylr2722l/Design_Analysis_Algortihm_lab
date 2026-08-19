@@ -18,6 +18,9 @@ cin>>graph[i][j];
 vector<bool> visited(n, false);
 visited[0] = true;
 int totalCost = 0;
+
+cout<<"\n edges in minimum spanning tree:\n";
+
 for(int count = 0; count<n-1; count++){
 int minWeight = INT_MAX;
 int u = -1;
@@ -34,6 +37,12 @@ v = j;
 }
 }
 }
+
+if(v == -1){
+cout<<"graph is disconnected. mst cannot be formed.\n";
+return 0;
+}
+
 
 visited[v] = true;
 
